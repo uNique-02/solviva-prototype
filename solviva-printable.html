@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solviva Quote - Juan Dela Cruz</title>
+    <style>
+        @media print {
+    body {
+        zoom: 55%; /* Shrinks the overall layout slightly */
+        margin: 0;
+        padding: 10px;
+        background: white;
+    }
+    .quote-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 20px; /* space between columns */
+            background: #f0f5f0;
+            border-radius: 20px;
+        }
+
+    /* Force all content to fit on one printed page */
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    @page {
+        size: A4;
+        margin: 0.5cm;
+    }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-section {
+            flex: 1;
+        }
+
+        .header-section h3 {
+            font-size: 11px;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .header-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .header-section p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .logo {
+            text-align: right;
+        }
+
+        .logo-img {
+            width: 180px;
+            height: auto;
+        }
+
+        .logo-circle {
+            width: 180px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0a5f3f;
+            letter-spacing: -1px;
+        }
+
+        .logo-subtext {
+            font-size: 11px;
+            color: #0a5f3f;
+            margin-top: -5px;
+        }
+
+        .quote-header {
+            margin-bottom: 20px;
+        }
+
+        .quote-header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .location {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .location::before {
+            content: "📍";
+            margin-right: 5px;
+        }
+
+        .quote-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 20px; /* space between columns */
+            background: #f0f5f0;
+            border-radius: 20px;
+        }
+
+        .summary-left {
+            /* flex: 1; */
+            /* background: #f0f5f0; */
+            /* padding: 30px;
+            padding-right: 0px; */
+            /* border-radius: 8px; */
+            padding: 50px 0;
+            padding-left: 50px;
+        }
+
+        .summary-right {
+            /* flex: 1; */
+            /* background: #f0f5f0; */
+            /* padding: 30px;
+            padding-left: 0px; */
+            /* border-radius: 8px; */
+            padding: 50px 0;
+            padding-right: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .system-size {
+            margin-bottom: 25px;
+        }
+
+        .system-size h3 {
+            font-size: 14px;
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .system-size h2 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #0a5f3f;
+        }
+
+        .system-inclusions h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .system-inclusions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .system-inclusions li {
+            font-size: 13px;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .system-inclusions li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0a5f3f;
+        }
+
+        .warranty-table {
+            width: 100%;
+        }
+
+        .warranty-table h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .warranty-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .warranty-row:last-child {
+            border-bottom: none;
+        }
+
+        .warranty-label {
+            color: #666;
+        }
+
+        .warranty-value {
+            font-weight: 500;
+        }
+
+        .family-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff9c4 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a5f3f;
+            font-size: 14px;
+            /* margin-top: 20px; */
+        }
+
+        .project-cost {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .project-cost h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cost-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start; 
+            border-radius: 30px;
+        }
+
+        .cost-left {
+            flex: 1;
+        }
+
+        .cost-right {
+            flex: 1;
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            /* padding-bottom: 50px; */
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        .cost-item-main {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .cost-label {
+            flex: 1;
+        }
+
+        .cost-value {
+            font-weight: 500;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .add-ons {
+            margin-top: 25px;
+        }
+
+        .add-ons h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .add-on-item {
+            padding: 10px 0;
+        }
+
+        .add-on-item .cost-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .add-on-detail {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .note-text {
+            font-size: 11px;
+            color: #d32f2f;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .cost-totals {
+            margin-top: 20px;
+            padding-top: 15px;
+            /* border-top: 2px solid #0a5f3f; */
+        }
+
+        .cost-total-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .final-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0a5f3f;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 2px solid #0a5f3f;
+        }
+
+        .payment-info h2 {
+            font-size: 26px; 
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .payment-highlight {
+            /* background: #fff; */
+            /* padding: 0 20px; */
+            font-size: 14px;
+            /* border-radius: 8px; */
+            /* margin-bottom: 10px;  */
+            /* border: 2px solid #0a5f3f; */
+        }
+
+        .payment-label {
+            font-size: 14px;
+            color: #666;
+            /* margin-bottom: 5px; */
+        }
+
+        .payment-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0a5f3f;
+            margin-bottom: 10px;
+        }
+
+        .payment-details {
+            display: grid;
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            /* padding: 0 15px; */
+            border-radius: 8px;
+            grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+        }
+
+        .payment-detail-box {
+            background: #fff;
+            padding: 10px 15px;
+        }
+
+        .down-payment-amount{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+        }
+
+        .down-payment-method {
+
+        }
+
+        .detail-label {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .detail-subvalue {
+            font-size: 12px;
+            color: #666;
+            
+        }
+
+        .down-payment-amount-subvalue {
+            /* vertical-align: center;
+            justify-content: center; */
+            text-align: center;
+            padding-left: 10px;
+            /* height: 50%; */
+            border-left: 1px solid black;
+        }
+
+        .payment-options h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .option-note {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #fff;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .radio-button {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin-right: 15px;
+            background: #f5f5f5;
+        }
+
+        .option-term {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .option-amount {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer-notes {
+            /* background: #fff9e6; */
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .footer-notes .highlight {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
+        .signature-section {
+            display: flex;
+            gap: 150px;
+            margin-top: 80px;
+            padding: 0px 50px;
+        }
+
+        .signature-box {
+            flex: 1;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+        }
+
+        .signature-label {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .other-costs-summary {
+            display: grid;
+            grid-template-columns: 40% 60%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-section">
+            <h3>Client/Company:</h3>
+            <h2>Juan Dela Cruz</h2>
+            <p>juandelacruz@gmail.com</p>
+            <p>09171835660</p>
+        </div>
+        <div class="header-section">
+            <h3>Sales Representative:</h3>
+            <h2>Leoniza Anub</h2>
+            <p>leoniza@solvivaenergy.com</p>
+            <p>09171728901</p>
+        </div>
+        <div class="logo">
+            <div class="logo-circle">
+                <div>
+                    <div class="logo-text">SOLVIVA</div>
+                    <div class="logo-subtext">An AboitizPower Company</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-header">
+        <h1>Quote Summary</h1>
+        <span class="location">#474 Jaboneros Street, Manila City</span>
+    </div>
+
+    <div class="quote-summary">
+        <div class="summary-left">
+            <div class="system-size">
+                <h3>Your system size:</h3>
+                <h2>10kWp</h2>
+            </div>
+            <div class="system-inclusions">
+                <h4>System Inclusions:</h4>
+                <ul>
+                    <li>17 x 645 Wp panels</li>
+                    <li>2 x 5 kWh Inverters</li>
+                    <li>1 x 15 kWh Batteries</li>
+                </ul>
+            </div>
+        </div>
+        <div class="summary-right">
+            <div class="warranty-table">
+                <h4>Warranty Coverage:</h4>
+                <div class="warranty-row">
+                    <span class="warranty-label">Solar Panel (Performance):</span>
+                    <span class="warranty-value">30 years</span>
+                </div>
+                <div class="warranty-row">
+                    <span class="warranty-label">Solar Panel (Product):</span>
+                    <span class="warranty-value">15 years</span>
+                </div>
+                <div class="warranty-row">
+                    <span class="warranty-label">Inverter:</span>
+                    <span class="warranty-value">5 years</span>
+                </div>
+                <div class="warranty-row">
+                    <span class="warranty-label">Batteries:</span>
+                    <span class="warranty-value">5 years</span>
+                </div>
+                <div class="warranty-row">
+                    <span class="warranty-label">Workmanship:</span>
+                    <span class="warranty-value">1 year</span>
+                </div>
+            </div>
+        </div>
+        <div class="family-image">
+            [Family Image]
+        </div>
+    </div>
+
+    <div class="project-cost">
+        <!-- <h2>Project Cost</h2> -->
+        <div class="quote-header">
+            <h1>Project Cost</h1>
+            <!-- <span class="location">#474 Jaboneros Street, Manila City</span> -->
+        </div>
+        <div class="cost-container">
+            <div class="cost-left">
+                <div class="cost-item cost-item-main">
+                    <span class="cost-label">10kWp</span>
+                    <span class="cost-value">₱534,000.00</span>
+                </div>
+
+                <div class="add-ons">
+                    <h3>Add-ons:</h3>
+                    
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>Battery</div>
+                            <div class="add-on-detail">15 kWh Batteries</div>
+                        </div>
+                        <span class="cost-value">₱397,833.45</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>CFEI (Certificate of Final Electrical Inspection)</div>
+                            <div class="note-text">This item is recommended in compliance<br>with the Philippine Electrical Code</div>
+                        </div>
+                        <span class="cost-value">Excluded per client instruction</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>RSD (Rapid Shutdown Device)</div>
+                            <div class="note-text">This item is recommended in compliance<br>with the Philippine Electrical Code</div>
+                        </div>
+                        <span class="cost-value">Excluded per client instruction</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>Special roof mounting</div>
+                            <div class="add-on-detail">Typical longspan only</div>
+                        </div>
+                        <span class="cost-value">₱0.00</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>Additional DC Cable (Meters)</div>
+                            <div class="add-on-detail">5 meters</div>
+                        </div>
+                        <span class="cost-value">₱5,932.50</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>Additional AC Cable (Meters)</div>
+                            <div class="add-on-detail">5 meters</div>
+                        </div>
+                        <span class="cost-value">₱12,656.00</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">
+                            <div>Additional Delivery Logistics</div>
+                            <div class="add-on-detail">0.00 kilometers</div>
+                        </div>
+                        <span class="cost-value">₱0.00</span>
+                    </div>
+
+                    <div class="cost-item add-on-item">
+                        <div class="cost-label">Other additional costs</div>
+                        <span class="cost-value">₱0.00</span>
+                    </div>
+                </div>
+                <div class="other-costs-summary">
+                    <div>
+
+                    </div>
+                    <div class="cost-totals">
+                        <div class="cost-total-item">
+                            <span>Subtotal:</span>
+                            <span>₱950,421.95</span>
+                        </div>
+                        <div class="cost-total-item">
+                            <span>Less: Discount:</span>
+                            <span>- ₱10,000.00</span>
+                        </div>
+                        <div class="cost-total-item">
+                            <span>12% VAT</span>
+                            <span>₱12,000.00</span>
+                        </div>
+                        <div class="cost-item final-price">
+                            <span>Final Price:</span>
+                            <span>₱940,421.95</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="cost-right">
+                <div class="payment-info">
+                    <h2>Payment Information</h2>
+                    
+                    <div class="payment-highlight">
+                        <div class="payment-label">Rent-to-Own Monthly Payment</div>
+                        <div class="payment-amount">₱12,538.95/ month</div>
+                    </div>
+
+                    <div class="payment-details">
+                        <div class="payment-detail-box down-payment-amount">
+                            <div>
+                                <div class="detail-label">Down payment amount</div>
+                                <div class="detail-value">₱0</div>
+                            </div>
+                            <div class="detail-subvalue down-payment-amount-subvalue">0%</div>
+                        </div>
+                        <div class="payment-detail-box down-payment-method">
+                            <div class="detail-label" >Down Payment Mode of Payment</div>
+                            <div class="detail-value">Not Applicable</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-highlight">
+                        <div class="payment-label">Remaining balance</div>
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-detail-box down-payment-amount">
+                            <div>
+                                <div class="detail-label">Remaining Balance</div>
+                                <div class="detail-value">₱940,421.95</div>
+                            </div>
+                            <div class="detail-subvalue down-payment-amount-subvalue">0%</div>
+                        </div>
+                        <div class="payment-detail-box down-payment-method">
+                            <div class="detail-label" >Remaining Balance Mode of Payment</div>
+                            <div class="detail-value">100% Rent-to-Own</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-options">
+                        <h4>Terms in Months</h4>
+                        <div class="option-note">If no option is selected, the monthly term will not apply to the payment plan.</div>
+                        
+                        <div class="payment-option">
+                            <div class="radio-button"></div>
+                            <span class="option-term">12 months</span>
+                            <span class="option-amount">₱78,368.49/month</span>
+                        </div>
+
+                        <div class="payment-option">
+                            <div class="radio-button"></div>
+                            <span class="option-term">24 months</span>
+                            <span class="option-amount">₱39,184.24/month</span>
+                        </div>
+
+                        <div class="payment-option">
+                            <div class="radio-button"></div>
+                            <span class="option-term">36 months</span>
+                            <span class="option-amount">₱26,122.83/month</span>
+                        </div>
+
+                        <div class="payment-option">
+                            <div class="radio-button"></div>
+                            <span class="option-term">48 months</span>
+                            <span class="option-amount">₱19,592.12/month</span>
+                        </div>
+
+                        <div class="payment-option">
+                            <div class="radio-button"></div>
+                            <span class="option-term">60 months</span>
+                            <span class="option-amount">₱15,673.69/month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-notes">
+        <p><span class="highlight">For cash payment, 50% down payment upon signing of contract & IFC, 50% upon energization of the system.</span></p>
+        <p>Once signed by the customer, this shall serve as an OFFICIAL PURCHASE ORDER. For order cancellations made after the signing of this document, all costs already incurred by Solvivarelated to servicing this order shall be charged to the client. By signing below, I confirm that I have fully reviewed and understood the contents of the proposal provided by Solviva, including all technical specifications, pricing details, systemdesigns, terms and conditions, and installation terms. I acknowledge that it was my responsibility to seek clarification on any aspects I did not understand prior to signing.</p>
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-box">
+            <div class="signature-label">Payment method</div>
+        </div>
+        <div class="signature-box">
+            <div class="signature-label">Client signature over printed name</div>
+        </div>
+    </div>
+</body>
+</html>
