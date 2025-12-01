@@ -1,0 +1,596 @@
+<p>
+				{{system.inverterTotalRatingKw}}
+			</p>
+
+			<p>AC/DC ratio:</p>
+
+			<p>
+				{{system.system_dc_ac_ratio}}
+			</p>
+
+			<p>Adder table ex tax:</p>
+
+			<p>
+				{{system.data.adders_table_ex_tax}}
+			</p>
+
+			<p>Adder table inc tax:</p>
+
+			<p>
+				{{system.data.adders_table_inc_tax}}
+			</p>
+
+			<p>annual feed tarrif:</p>
+
+			<p>
+				{{system.data.bills.proposed|first_item_value:'feed_in_tariff_annual_proposed'}}
+			</p>
+
+			<p>annual feed tarrif inflation:</p>
+
+			<p>
+				{{system.data.bills.current.feed_in_tariff_inflation_annual}}
+			</p>
+
+			<p>annual generation (kwh):</p>
+
+			<p>
+				{{system.data.output.annual|floatformat:2}}
+			</p>
+
+			<p>annual pbi ($)</p>
+
+			<p>
+				{{system.data.bills.proposed|first_item_value:'performance_based_incentive_annual_proposed'}}
+			</p>
+
+			<p>annual utility inflation:</p>
+
+			<p>
+				{{system.data.bills.current.utility_inflation_annual}}
+			</p>
+
+			<p>array count:</p>
+
+			<p>
+				{{system.array_count}}
+			</p>
+
+			<p>battery codes:</p>
+
+			<p>
+				{{system.batteryCodes}}
+			</p>
+
+			<p>batter kwh (total):</p>
+
+			<p>
+				{{system.data.battery_total_kwh}}
+			</p>
+
+			<p>battery kWh usable:</p>
+
+			<p>
+				{{system.systemBatteryUsableKwh}}
+			</p>
+
+			<p>battery manufacturrer</p>
+
+			<p>
+				{{system.batteryManufacturer}}
+			</p>
+
+			<p>battery price:</p>
+
+			<p>
+				{{system.data.pricing.battery_price|floatformat:2}}
+			</p>
+
+			<p>battery quantity:</p>
+
+			<p>
+				{{system.data.batteries|length}}
+			</p>
+
+			<p>bill frequency:</p>
+
+			<p>
+				{{system.data.bills.proposed|first_item_value:'bill_frequency'}}
+			</p>
+
+			<p>capacity factor:</p>
+
+			<p>
+				{{system.systemCapacityFactor}}
+			</p>
+
+			<p>cash payment milestone:</p>
+
+			<p>
+				{{system.data.payment_options.0.payment_milestone_table}}
+			</p>
+
+			<p>compliance system performace:</p>
+
+			<p>
+				{{system.systemPerformanceTableCompliance}}
+			</p>
+
+			<p>component warranties:</p>
+
+			<p>
+				{{system.componentWarranties}}
+			</p>
+
+			<p>consumption annual (kwh):</p>
+
+			<p>
+				{{system.data.consumption.usage_annual|floatformat:2}}
+			</p>
+
+			<p>consumtpion offset percentage:</p>
+
+			<p>
+				{{system.data.consumption.consumption_offset_percentage}}
+			</p>
+
+			<p>DC capcity (kw)</p>
+
+			<p>
+				{{system.systemKwStc}}
+				<br>
+			</p>
+
+			<p>DC optimiser Efficiency:</p>
+
+			<p>
+				{{system.data.dcOptimizerEfficiency}}
+			</p>
+
+			<p>System discount:</p>
+
+			<p>
+				{{system.data.discount}}
+			</p>
+
+			<p>discount payback year:</p>
+
+			<p>
+				{{system.systemDiscountedPaybackYear}}
+			</p>
+
+			<p>down payment:</p>
+
+			<p>
+				{{system.downPayment}}
+			</p>
+
+			<p>KM avoided lifetime:</p>
+
+			<p>
+				{{system.data.environmentals.car_km}}
+			</p>
+
+			<p>car miles avoided lifetime:</p>
+
+			<p>
+				{{system.data.environmentals.car_km|multiply:0.621}}
+			</p>
+
+			<p>CO2 avoided</p>
+
+			<p>
+				{{system.data.environmentals.co2_tons}}
+			</p>
+
+			<p>flights avoided:</p>
+
+			<p>
+				{{system.data.environmentals.flights}}
+			</p>
+
+			<p>trees planted:</p>
+
+			<p>
+				{{system.data.environmentals.trees_planted}}
+			</p>
+
+			<p>discount:&nbsp;</p>
+
+			<p>
+				{{system.systemFinancialDiscountRate}}
+			</p>
+
+			<p>grid independence:</p>
+
+			<p>
+				{{system.data.bills|get_grid_independence_fraction|multiply:100.0|floatformat:0}}
+			</p>
+
+			<p>has multitple module types:</p>
+
+			<p>
+				{{system.hasMultipleModuleTypes}}
+			</p>
+
+			<p>incentive to customer:</p>
+
+			<p>
+				{{system.data.pricing.incentive_to_customer.total|floatformat:2}}
+			</p>
+
+			<p>incentive to installer:</p>
+
+			<p>
+				{{system.data.pricing.incentive_to_installer.incentives.0.settings.stc_quantity}}
+			</p>
+
+			<p>incentive to installer total:</p>
+
+			<p>
+				{{system.data.pricing.incentive_to_installer.total|floatformat:2}}
+			</p>
+
+			<p>inverter codes:</p>
+
+			<p>
+				{{system.inverterCodes}}
+			</p>
+
+			<p>inverter losses:</p>
+
+			<p>
+				{{system.inverterLosses}}
+			</p>
+
+			<p>inverter manufacturer:</p>
+
+			<p>
+				{{system.inverterManufacturer}}
+			</p>
+
+			<p>inverter quNTITY:</p>
+
+			<p>
+				{{system.inverterQuantity}}
+			</p>
+
+			<p>inverter output voltage:</p>
+
+			<p>
+				{{system.inverters_rated_output_voltage}}
+			</p>
+
+			<p>irr %:</p>
+
+			<p>
+				{{system.systemIrr}}
+			</p>
+
+			<p>coest of energy:</p>
+
+			<p>
+				{{system.systemLcoe}}
+			</p>
+
+			<p>module code:</p>
+
+			<p>
+				{{system.data.module.code}}
+			</p>
+
+			<p>module codes:</p>
+
+			<p>
+				{{system.moduleCodes}}
+			</p>
+
+			<p>module description:</p>
+
+			<p>
+				{{system.data.module.component_content.description}}
+			</p>
+
+			<p>dimensions formatted:</p>
+
+			<p>
+				{{system.moduleDimensionsFormatted}}
+			</p>
+
+			<p>module efficiency:</p>
+
+			<p>
+				{{system.moduleEfficiency}}
+			</p>
+
+			<p>module height:</p>
+
+			<p>
+				{{system.data.module.size.1|multiply:1000|floatformat:0}}
+			</p>
+
+			<p>module list detailed:</p>
+
+			<p>
+				{{system.moduleListDetailed}}
+			</p>
+
+			<p>mdule list simple:</p>
+
+			<p>
+				{{system.moduleListSimple}}
+			</p>
+
+			<p>module manufacturer:</p>
+
+			<p>
+				{{system.data.module.manufacturer_name}}
+			</p>
+
+			<p>manufacturers:</p>
+
+			<p>
+				{{system.moduleManufacturers}}
+			</p>
+
+			<p>manufactuers w/ qtty:</p>
+
+			<p>
+				{{system.moduleManufacturersWithQuantities}}
+			</p>
+
+			<p>manufactuers w/ qtty and codes:</p>
+
+			<p>
+				{{system.moduleManufacturersWithQuantitiesAndCodes}}
+			</p>
+
+			<p>module qtty w/ codes:</p>
+
+			<p>
+				{{system.moduleQuantitiesWithCodes}}
+			</p>
+
+			<p>module quantity:</p>
+
+			<p>
+				{{system.data.moduleQuantity}}
+			</p>
+
+			<p>system module size kw:</p>
+
+			<p>
+				{{system.data.module.kw_stc}}
+			</p>
+
+			<p>system module size watt:</p>
+
+			<p>
+				{{system.moduleWattStc}}
+			</p>
+
+			<p>system module size specs formatted:</p>
+
+			<p>
+				{{system.moduleSpecsFormatted}}
+			</p>
+
+			<p>system module table rows:</p>
+
+			<p>
+				{{system.moduleTableRows}}
+			</p>
+
+			<p>system module type count:</p>
+
+			<p>
+				{{system.moduleTypeCount}}
+			</p>
+
+			<p>system module types summary:</p>
+
+			<p>
+				{{system.moduleTypesSummary}}
+			</p>
+
+			<p>system module module width:</p>
+
+			<p>
+				{{system.data.module.size.0|multiply:1000|floatformat:0}}
+			</p>
+
+			<p>system module monthly geeneration</p>
+
+			<p>
+				{{system.data.output.annual|divide:12|floatformat:2}}
+			</p>
+
+			<p>system name:&nbsp;</p>
+
+			<p>
+				{{system.title}}
+			</p>
+
+			<p>system net present value ($)</p>
+
+			<p>
+				{{system.systemNetPresentValue}}
+			</p>
+
+			<p>System net price after all incentives:</p>
+
+			<p>
+				{{system.data.payment_options.0.pricing.net_system_price_after_all_incentives|floatformat:2}}
+			</p>
+
+			<p>system optmizer losses:</p>
+
+			<p>
+				{{system.optimizerLosses}}
+			</p>
+
+			<p>other component codes:</p>
+
+			<p>
+				{{system.otherComponentCodes}}
+			</p>
+
+			<p>output calculation notes:</p>
+
+			<p>
+				{{system.outputCalculationNotes}}
+			</p>
+
+			<p>output calcultor:</p>
+
+			<p>
+				{{system.outputCalculator}}
+			</p>
+
+			<p>panel orientation table:</p>
+
+			<p>
+				{{system.data.system_panel_orientation_table}}
+			</p>
+
+			<p>panel orientations:</p>
+
+			<p>
+				{{system.panelOrientations}}
+			</p>
+
+			<p>panel placements:</p>
+
+			<p>
+				{{system.systemPanelPlacement}}
+			</p>
+
+			<p>payback year:</p>
+
+			<p>
+				{{system.systemPaybackYear}}
+			</p>
+
+			<p>performance adjustment:</p>
+
+			<p>
+				{{system.performanceAdjustment}}
+			</p>
+
+			<p>perforamcne ratio:</p>
+
+			<p>
+				{{system.systemPerformanceRatio}}
+			</p>
+
+			<p>price adders fixed:</p>
+
+			<p>
+				{{system.data.adders_per_system}}
+			</p>
+
+			<p>price adders per panel:</p>
+
+			<p>
+				{{system.data.adders_per_panel}}
+			</p>
+
+			<p>price adders per watt:</p>
+
+			<p>
+				{{system.data.adders_per_watt}}
+			</p>
+
+			<p>price after incentive to installer:</p>
+
+			<p>
+				{{system.data.payment_options.0.pricing.purchase_price_inc_tax|floatformat:2}}
+			</p>
+
+			<p>price ex tax:</p>
+
+			<p>
+				{{system.data.payment_options.0.pricing.system_price_excluding_tax|floatformat:2}}
+			</p>
+
+			<p>price including tax:</p>
+
+			<p>
+				{{system.data.payment_options.0.pricing.system_price_including_tax|floatformat:2}}
+			</p>
+
+			<p>price per watt (purchase price):</p>
+
+			<p>
+				{{system.data|get_price_per_watt_purchase_price|divide:1000|floatformat:2}}
+			</p>
+
+			<p>price per watt (total price):</p>
+
+			<p>
+				{{system.data|get_price_per_watt_total_price|divide:1000|floatformat:2}}
+			</p>
+
+			<p>system price tax:</p>
+
+			<p>
+				{{system.data.payment_options.0.pricing.tax|floatformat:2}}
+			</p>
+
+			<p>pricing adders:</p>
+
+			<p>
+				{{system.data.pricing.adders|floatformat:2}}
+			</p>
+
+			<p>PTC rating:</p>
+
+			<p>
+				{{system.PTCRatingCalculatedFromSTC}}
+			</p>
+
+			<p>self-consumption percent:</p>
+
+			<p>
+				{{system.data.bills|get_self_consumption_fraction|multiply:100.0|floatformat:0}}
+			</p>
+
+			<p>shading losses:</p>
+
+			<p>
+				{{system.shadingLossAnnual}}
+			</p>
+
+			<p>summary:</p>
+
+			<p>
+				{{system.summary}}&nbsp;total losses:</p>
+
+			<p>
+				{{system.systemTotalLosses}}
+			</p>
+
+			<p>&nbsp;ROI:</p>
+
+			<p>
+				{{system.systemReturnOnInvestment}}
+			</p>
+
+			<p>years to stimulate financialas:</p>
+
+			<p>
+				{{system.data.bills.proposed|first_item_value:'years_to_simulate'}}
+			</p>
+
+			<p>System component warranties:</p>
+
+			<p>
+				{{system.componentWarranties}}
+			</p>
+
+			<p>Payment option name:</p>
+
+			<p>
+				{{system.data.payment_options.0.title}}
+				<br>
+			</p>

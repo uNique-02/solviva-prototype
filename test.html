@@ -1,0 +1,1051 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+  rel="stylesheet">
+
+
+<div class="header"
+  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0;">
+  <div class="header-section" style="flex: 1;">
+
+    <h3 style="margin: 0; padding: 0; box-sizing: border-box; color: #666; margin-bottom: 3px; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Client/Company:</h3>
+
+    <h2 style="margin: 0; padding: 0; box-sizing: border-box; font-size: 9pt; margin-bottom: 2px; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">
+      {{contact.first_name}}&nbsp; {{contact.family_name}}
+    </h2>
+
+    <p style="margin: 0; padding: 0; box-sizing: border-box; color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+      {{contact.email}}
+    </p>
+
+    <p style="margin: 0; padding: 0; box-sizing: border-box; color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+      {{contact.phone}}
+    </p>
+  </div>
+  <div class="header-section" style="flex: 1;">
+
+    <h3
+      style="margin: 0; padding: 0; box-sizing: border-box; font-size: 11px; color: #666; font-weight: normal; margin-bottom: 2px;">
+      Sales Representative:</h3>
+
+    <h2 style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 3px; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">
+      {{assigned_role.display}}
+    </h2>
+
+    <p style="margin: 0; padding: 0; box-sizing: border-box; color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+      {{assigned_role.email}}
+      <br>
+    </p>
+
+    <p style="margin: 0; padding: 0; box-sizing: border-box; color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+      {{assigned_role.phone}}
+      <br>
+    </p>
+  </div>
+  <div class="logo" style="text-align: right;">
+    <div class="logo-circle"
+      style="width: 180px; height: 60px; display: flex; align-items: center; justify-content: flex-end;">
+      <div>
+        <div class="logo-text" style="font-size: 42px; font-weight: 700; color: #0a5f3f; letter-spacing: -1px;">SOLVIVA
+        </div>
+        <div class="logo-subtext" style="font-size: 11px; color: #0a5f3f; margin-top: 2px;">An AboitizPower Company
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quote-header" style="margin-bottom: 8px;">
+
+  <h1 style="margin: 0; padding: 0; box-sizing: border-box; display: inline-block; margin-right: 10px; font-size: 16pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Quote Summary</h1>
+  <span class="location" style="display: inline-flex; align-items: center; color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">📍 #474 Jaboneros Street, Manila City</span>
+</div>
+
+<div class="quote-summary"
+  style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #f0f5f0; border-radius: 10px;">
+  <div class="summary-left" style="padding: 10px 0; padding-left: 20px;">
+    <div class="system-size" style="margin-bottom: 0px;">
+
+      <h3 style="margin: 0; padding: 0; box-sizing: border-box; color: #666; margin-bottom: 5px; font-size: 12pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Your system size:</h3>
+
+      <h2 style="margin: 0; padding: 0; box-sizing: border-box; color: #0a5f3f; font-size: 16pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">
+        {% if system.data.moduleQuantity &gt; 0 %} {{ system.data.module.kw_stc|multiply:system.data.moduleQuantity}}kWp
+        {% else %} 0kWp {% endif %}
+      </h2>
+
+    </div>
+    <div class="system-inclusions">
+
+      <h4 style="
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 9pt;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;">
+        System Inclusions:
+      </h4>
+
+      <ul style="
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  font-family: 'Inter', sans-serif;">
+        <li style="
+    margin: 0 0 5px 0;
+    font-size: 8pt;
+    font-weight: 500;">
+          {{system.data.moduleQuantity}} x 645 Wp panels
+        </li>
+
+        <li style="
+    margin: 0 0 5px 0;
+    font-size: 8pt;
+    font-weight: 500;">
+          {{system.inverterQuantity}} x 5 kWh Inverters
+        </li>
+
+        <li style="
+    margin: 0 0 5px 0;
+    font-size: 8pt;
+    font-weight: 500;">
+          {{system.data.batteries|length}} x 15 kWh Batteries
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+  <div class="summary-right"
+    style="padding: 10px 0; padding-right: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="warranty-table" style="width: 100%;">
+
+      <h4 style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 5px; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Warranty Coverage:</h4>
+      <div class="warranty-row" style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #d0d0d0; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+        <span class="warranty-label" style="color: #666;">Solar Panel (Performance):</span>
+        <span class="warranty-value" style="font-weight: 500;">30 years</span>
+      </div>
+      <div class="warranty-row" style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #d0d0d0; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+        <span class="warranty-label" style="color: #666;">Solar Panel (Product):</span>
+        <span class="warranty-value" style="font-weight: 500;">15 years</span>
+      </div>
+      <div class="warranty-row" style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #d0d0d0; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+        <span class="warranty-label" style="color: #666;">Inverter:</span>
+        <span class="warranty-value" style="font-weight: 500;">5 years</span>
+      </div>
+      <div class="warranty-row" style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #d0d0d0; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+        <span class="warranty-label" style="color: #666;">Batteries:</span>
+        <span class="warranty-value" style="font-weight: 500;">5 years</span>
+      </div>
+      <div class="warranty-row" style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: none; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+        <span class="warranty-label" style="color: #666;">Workmanship:</span>
+        <span class="warranty-value" style="font-weight: 500;">1 year</span>
+      </div>
+    </div>
+  </div>
+  <div class="family-image"
+    style="width: 100%; height: 100%; background: linear-gradient(135deg, #e8f5e9 0%, #fff9c4 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0a5f3f; font-size: 14px;">
+    [Family Image]
+  </div>
+</div>
+
+<div class="project-cost" style="margin-top: 10px; margin-bottom: 10px;">
+  <div class="quote-header" style="margin-bottom: 5px;">
+
+    <h1 style="margin: 0; padding: 0; box-sizing: border-box; display: inline-block; margin-right: 10px; font-size: 16pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Project Cost</h1>
+  </div>
+  <div class="cost-container" style="display: flex; gap: 15px; align-items: flex-start; border-radius: 30px;">
+    <div class="cost-left" style="flex: 1;">
+      <div class="cost-item cost-item-main"
+        style="display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #e0e0e0;">
+        <span class="cost-label" style="flex: 1; font-size: 10pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">{{system.data.module.kw_stc|multiply:system.data.moduleQuantity}}kWp</span>
+
+        <span class="cost-value" style="font-weight: 500; min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+          &nbsp; &nbsp;{{system.systemNetPresentValue|currency}}
+        </span>
+
+      </div>
+
+      <div class="add-ons" style="margin-top: 5px;">
+
+        <h3 style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 5px; font-size: 10pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Add-ons:</h3>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Battery</div>
+            <div class="add-on-detail" style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; color: #666;">
+              {{system.data.battery_total_kwh}}&nbsp;kWh Batteries</div>
+          </div>
+          <span class="cost-value" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; min-width: 120px; text-align: right;">₱{{system.data.pricing.battery_price|floatformat:2}}</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">CFEI (Certificate of Final Electrical Inspection)</div>
+            <div class="note-text" style="color: #d32f2f; font-style: italic; margin-top: 1px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">This item is recommended in compliance
+              <br>with the Philippine Electrical Code
+            </div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 6pt; font-style: italic; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Excluded per client instruction</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0; font-size: 14px;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">RSD (Rapid Shutdown Device)</div>
+            <div class="note-text" style="color: #d32f2f; margin-top: 1px; font-size: 6pt; font-style: italic; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">This item is recommended in compliance
+              <br>with the Philippine Electrical Code
+            </div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 6pt; font-style: italic; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Excluded per client instruction</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0; font-size: 14px;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="box-sizing: border-box; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Special roof mounting</div>
+            <div class="add-on-detail" style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; color: #666;">Typical longspan only</div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱0.00</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0; font-size: 14px;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Additional DC Cable (Meters)</div>
+            <div class="add-on-detail" style="color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">5 meters</div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱5,932.50</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Additional AC Cable (Meters)</div>
+            <div class="add-on-detail" style="color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">5 meters</div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱12,656.00</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0;">
+          <div class="cost-label" style="flex: 1;">
+            <div style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Additional Delivery Logistics</div>
+            <div class="add-on-detail" style="color: #666; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">0.00 kilometers</div>
+          </div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱0.00</span>
+        </div>
+
+        <div class="cost-item add-on-item"
+          style="display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #e0e0e0;">
+          <div class="cost-label" style="flex: 1; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Other additional costs</div>
+          <span class="cost-value" style="min-width: 120px; text-align: right; font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱0.00</span>
+        </div>
+      </div>
+      <div class="other-costs-summary" style="display: grid; grid-template-columns: 40% 60%;">
+        <div>
+          <br>
+        </div>
+        <div class="cost-totals" style="margin-top: 5px; padding-top: 5px;">
+          <div class="cost-total-item" style="display: flex; justify-content: space-between; padding: 2px 0;">
+            <span style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Subtotal:</span>
+            <span style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">₱950,421.95</span>
+          </div>
+          <div class="cost-total-item"
+            style="display: flex; justify-content: space-between; padding: 2px 0; font-size: 14px;">
+            <span style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Less: Discount:</span>
+            <span style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">-
+              {{system.systemFinancialDiscountRate|slice:4|divide:100|multiply:systems.0.data.payment_options.0.pricing.purchase_price_inc_tax|floatformat:2|currency}}</span>
+
+          </div>
+          <div class="cost-total-item" style="display: flex; justify-content: space-between; padding: 2px 0;">
+            <span style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">12% VAT</span>
+            <span style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">{{system.data.payment_options.0.pricing.tax|floatformat:2|currency}}</span>
+          </div>
+          <div class="cost-item final-price"
+            style="display: flex; justify-content: space-between; padding: 8px 0; color: #0a5f3f; margin-top: 5px; padding-top: 5px; border-top: 2px solid #0a5f3f;">
+            <span style="font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">Final Price:</span>
+            <span
+              style="font-size: 11pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">{{systems.0.data.payment_options.0.pricing.purchase_price_inc_tax|floatformat:2|currency}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cost-right" style="flex: 1; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+      <div class="payment-info">
+
+        <h2 style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 10px; font-size: 12pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Payment Information</h2>
+
+        <div class="payment-highlight" style="font-size: 14px;">
+          <div class="payment-label" style="color: #666; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+
+            {% if system.data.payment_options.0.title == "Cash" %} Payment Due After Installation {% else %} Rent-to-Own
+            Monthly Payment {% endif %} &nbsp;
+          </div>
+          <div class="payment-amount" style="color: #0a5f3f; margin-bottom: 5px; font-size: 11pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+
+            {% if system.data.payment_options.0.title == "Cash" %}
+            {{system.data.payment_options.0.pricing.purchase_price_inc_tax|floatformat:2|currency}} {% else %}
+            ₱12,538.95/ month {% endif %}
+
+          </div>
+        </div>
+
+        <div class="payment-details"
+          style="display: grid; gap: 10px; margin-top: 5px; margin-bottom: 10px; border-radius: 8px; grid-template-columns: repeat(2, 1fr);">
+          <div class="payment-detail-box down-payment-amount"
+            style="background: #fff; padding: 8px 12px; display: grid; grid-template-columns: 2fr 1fr; align-items: center;">
+            <div>
+              <div class="detail-label" style="color: #666; margin-bottom: 3px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Down payment amount</div>
+              <div class="detail-value" style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+                {{system.downPayment|currency}}
+              </div>
+            </div>
+            <div class="detail-subvalue down-payment-amount-subvalue" style="color: #666; text-align: center; padding-left: 10px; border-left: 1px solid black; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+              {{systems.0.data.payment_options.0.deposit_percentage}}
+            </div>
+          </div>
+          <div class="payment-detail-box down-payment-method" style="background: #fff; padding: 8px 12px;">
+            <div class="detail-label" style="color: #666; margin-bottom: 3px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Down Payment Mode of Payment</div>
+            <div class="detail-value" style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+              {{systems.0.data.payment_options.0.title}}
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-highlight" style="font-size: 14px;">
+          <div class="payment-label" style="color: #666; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Remaining balance</div>
+        </div>
+        <div class="payment-details"
+          style="display: grid; gap: 10px; margin-top: 5px; margin-bottom: 10px; border-radius: 8px; grid-template-columns: repeat(2, 1fr);">
+          <div class="payment-detail-box down-payment-amount"
+            style="background: #fff; padding: 8px 12px; display: grid; grid-template-columns: 2fr 1fr; align-items: center;">
+            <div>
+              <div class="detail-label" style="color: #666; margin-bottom: 3px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Remaining Balance</div>
+              <div class="detail-value" style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+                {{system.data.payment_options.0.pricing.system_price_including_tax|subtract:system.downPayment|floatformat:2|currency}}
+              </div>
+            </div>
+            <div class="detail-subvalue down-payment-amount-subvalue" style="color: #666; text-align: center; padding-left: 10px; border-left: 1px solid black; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">0%</div>
+          </div>
+          <div class="payment-detail-box down-payment-method" style="background: #fff; padding: 8px 12px;">
+            <div class="detail-label" style="color: #666; margin-bottom: 3px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Remaining Balance Mode of Payment</div>
+            <div class="detail-value" style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">100% Rent-to-Own</div>
+          </div>
+        </div>
+
+        <div class="payment-options">
+
+          <h4 style="margin: 0; padding: 0; box-sizing: border-box; margin-bottom: 5px; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Terms in Months</h4>
+          <div class="option-note" style="color: #666; font-style: italic; margin-bottom: 8px; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">If no option is selected, the monthly term will not apply to the payment plan.</div>
+
+          <div class="payment-option"
+            style="display: flex; align-items: center; padding: 8px 10px; background: #fff; border-radius: 6px; margin-bottom: 3px;">
+            <div class="radio-button"
+              style="width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 15px; background: #f5f5f5;">
+              <br>
+            </div>
+            <span class="option-term" style="flex: 1; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">12 months</span>
+            <span class="option-amount" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">₱78,368.49/month</span>
+          </div>
+
+          <div class="payment-option"
+            style="display: flex; align-items: center; padding: 8px 10px; background: #fff; border-radius: 6px; margin-bottom: 3px;">
+            <div class="radio-button"
+              style="width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 15px; background: #f5f5f5;">
+              <br>
+            </div>
+            <span class="option-term" style="flex: 1; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">24 months</span>
+            <span class="option-amount" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">₱39,184.24/month</span>
+          </div>
+
+          <div class="payment-option"
+            style="display: flex; align-items: center; padding: 8px 10px; background: #fff; border-radius: 6px; margin-bottom: 3px;">
+            <div class="radio-button"
+              style="width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 15px; background: #f5f5f5;">
+              <br>
+            </div>
+            <span class="option-term" style="flex: 1; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">36 months</span>
+            <span class="option-amount" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">₱26,122.83/month</span>
+          </div>
+
+          <div class="payment-option"
+            style="display: flex; align-items: center; padding: 8px 10px; background: #fff; border-radius: 6px; margin-bottom: 3px;">
+            <div class="radio-button"
+              style="width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 15px; background: #f5f5f5;">
+              <br>
+            </div>
+            <span class="option-term" style="flex: 1; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">48 months</span>
+            <span class="option-amount" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">₱19,592.12/month</span>
+          </div>
+
+          <div class="payment-option"
+            style="display: flex; align-items: center; padding: 8px 10px; background: #fff; border-radius: 6px; margin-bottom: 3px;">
+            <div class="radio-button"
+              style="width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 15px; background: #f5f5f5;">
+              <br>
+            </div>
+            <span class="option-term" style="flex: 1; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">60 months</span>
+            <span class="option-amount" style="font-size: 9pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">₱15,673.69/month</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-notes"
+  style="padding: 5px; border-radius: 8px; margin-top: 5px; margin-bottom: 10px; font-size: 12px; line-height: 1.5;">
+
+  <p style="margin: 0; padding: 0; box-sizing: border-box;"><span class="highlight" style="color: #d32f2f; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">For cash payment, 50% down payment upon signing of contract &amp; IFC, 50% upon energization of
+      the system.</span></p>
+
+  <p style="margin: 0; padding: 0; box-sizing: border-box; font-size: 6pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Once signed by the customer, this shall serve as an OFFICIAL PURCHASE ORDER. For order
+    cancellations made after the signing of this document, all costs already incurred by Solviva related to servicing
+    this order shall be charged to the client. By signing below, I confirm that I have fully reviewed and understood the
+    contents of the proposal provided by Solviva, including all technical specifications, pricing details, system
+    designs, terms and conditions, and installation terms. I acknowledge that it was my responsibility to seek
+    clarification on any aspects I did not understand prior to signing.</p>
+</div>
+
+<div class="signature-section" style="display: flex; gap: 100px; margin-top: 30px; padding: 0px 50px;">
+  <div class="signature-box" style="flex: 1; text-align: center; padding-top: 5px; border-top: 2px solid #333;">
+    <div class="signature-label" style="color: #666; margin-top: 5px; font-size: 10pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Payment method</div>
+  </div>
+  <div class="signature-box" style="flex: 1; text-align: center; padding-top: 5px; border-top: 2px solid #333;">
+    <div class="signature-label" style="color: #666; margin-top: 5px; font-size: 10pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Client signature over printed name</div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- TERMS AND CONDITIONS -->
+
+
+<div style="background:#f4f4f4; padding:10px 0; margin:0;">
+
+  <div
+    style="background:rgb(255, 255, 255); width:820px; margin:0 auto; padding:25px; line-height:1.35; font-size:11px;">
+
+    <hr class="page-break-always">
+
+    <h2 style="margin:0 0 10px 0; font-size: 8pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;">Terms and Conditions:</h2>
+
+    <p style="margin:10px 0 0 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">PERMITTING REQUIREMENTS TO BE PROVIDED BY THE CLIENT</p>
+
+    <ul style="margin:0 0 10px 15px; padding:0; line-height: 1.5;">
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Electricity bill (should be under the name of the client)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Valid ID of the person in the electricity bill</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Tax Declaration</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">OCT/TCT (Land/Property title)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Official Receipt of the latest payment of Real Property Tax (Land &amp; Building)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;">Building Permit</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Certificate of Occupancy</li>
+    </ul>
+
+    <p style="margin:0 0 3px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Some LGU’s may also require the following documents (varies per LGU):</p>
+
+    <ul style="margin:0 0 15px 15px; padding:0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Electrical Plan / Load Schedule signed and Sealed by a Professional Electrical Engineer (Can be
+        provided by Solviva if client avails)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Electrical Design Analysis (Can be provided by Solviva if client avails)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Structural &amp; Roof Plan (Can be provided by Solviva if client avails)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Structural Analysis (Can be provided by Solviva if client avails)</li>
+      <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Barangay Clearance for Solar Installation</li>
+    </ul>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+      <div>
+
+        <p style="margin:0 0 15px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">The following terms shall apply to the pricing and scope of the installation project:</p>
+
+        <!-- Additional Cable Costs -->
+
+        <h3 style="margin:20px 0 0 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Additional Cable Costs:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Any additional length beyond the initial 30 meters of Direct Current (DC) cable and the initial
+          10 meters of Alternating Current (AC) cable will be charged per meter at a specified rate.</p>
+
+        <!-- Logistics Add-On -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Logistics Add-On Cost:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Any excess distance beyond the first 30 km from Kilometer 0 (Rizal Park) will be charged per
+          kilometer at a specified rate.</p>
+
+        <!-- Price Validity -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Price Validity:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">The prices provided in this proposal are valid for a period of 30 days from the date of
+          issuance. After this period, the prices are subject to change without prior notice.</p>
+
+        <!-- Exclusions -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Exclusions:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Any items or services not explicitly mentioned or detailed in this proposal such as but not
+          limited to Service entrance remodeling, building permit, occupancy certificate, house plans, and any other
+          fees not related to the solar pv system itself shall be considered excluded from the scope of work and will
+          not be provided unless otherwise agreed upon through a variation order or a revision in the proposal.</p>
+
+        <!-- Force Majeure -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Force Majeure:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">This proposal is subject to Force Majeure. The company shall not be held liable for any delays,
+          failures, or damages resulting from events or circumstances beyond its reasonable control, including but not
+          limited to natural disasters, acts of government, or other unforeseeable events.</p>
+
+        <!-- Variation Orders -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Variation Orders:</h3>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Any request for changes or modifications to the project after the signing of the detailed design
+          plans shall be processed through a variation order. Any such variation order may entail additional costs,
+          which will be communicated and agreed upon by both parties prior to implementation.</p>
+
+        <!-- Site Assessment -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Site Assessment:</h3>
+
+        <p style="margin:0 0 10px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Technical Assessment:</strong> We conduct a thorough technical site assessment,
+          including roof evaluation and sunlight analysis, before proceeding with the next steps. This ensures that your
+          property is suitable for a rooftop solar system.</p>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Suitability Refund:</strong> If you have paid a reservation fee and if our assessment
+          shows that your property is not suitable, we will refund your reservation fee within 30 days.</p>
+
+        <!-- Installation -->
+
+        <h3 style="margin:20px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Installation</h3>
+
+        <p style="margin:0 0 10px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Site Survey:</strong> Once the contract is signed and the reservation fee is received,
+          site survey commences within 30 days.</p>
+
+        <p style="margin:0 0 10px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Initial system design:</strong> For installation we will be given one (1) week or
+          earlier after initial technical site assessment and after receiving all necessary information from you.</p>
+
+        <p style="margin:0 0 12px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Installation Schedule:</strong> We will schedule the installation within two (2) weeks
+          after your approval of the proposed system design and once your down payment has been cleared. To ensure
+          timely installation, we encourage prompt approvals and payments.</p>
+
+      </div>
+
+      <div>
+        <!-- Warranty -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Warranty</h3>
+
+        <ul style="margin:0 0 0px 0px; padding:0; list-style-position: inside; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Coverage: Our warranty covers manufacturing defects. Please note that it doesn’t cover damage
+            from normal wear and tear, unauthorized modifications, or events beyond our control, such as natural
+            disasters.</li>
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Warranty Claims: If you experience any issues, please notify us in writing within 30 days of
+            identifying the defect. We are committed to reviewing your claim and resolving the issue as promptly as
+            possible.</li>
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Preventive Maintenance: Failure to conduct proper and periodic Preventive Maintenance activities
+            may void the warranty.</li>
+        </ul>
+
+        <!-- Cancellation -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Cancellation</h3>
+
+        <ul style="margin:0 0 0px 0px; padding:0; list-style-position: inside;">
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Down Payment: Should you need to cancel after making the down payment, we will refund 80% of it,
+            provided no materials have been ordered. If materials have already been procured, we may need to retain the
+            payment to cover those costs.</li>
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Should Solviva not be able to proceed with the completion of the installation and consequent
+            turnover of the Solar Facility due to an action or decision of the client such as, but not limited to, the
+            unavailability of the structure on which the Solar Facility will be installed, then Solviva shall turn over
+            any and all installed portions of the facility, and the client shall be liable for the payments commensurate
+            to the portions that have been turned over.</li>
+        </ul>
+
+        <!-- Quotation Validity -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Quotation Validity</h3>
+
+        <p style="margin:0 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">The special quotation we’ve provided is valid for thirty (30) days from the date it was issued.
+          We’re committed to being transparent about pricing and will inform you of any necessary adjustments as soon as
+          possible.</p>
+
+        <!-- Price Adjustments -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Price Adjustments</h3>
+
+        <p style="margin:0 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Please be aware that prices may change due to factors beyond our control, like fluctuations in
+          material costs. We’ll always keep you informed and discuss any necessary adjustments.</p>
+
+        <!-- Default in Payments -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Default in Payments</h3>
+
+        <p style="margin:0 0 10px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Late Payments:</strong> We understand that things can happen, but we do need to charge a
+          3% monthly interest on any overdue payments. If you’re having trouble making a payment, please reach out to us
+          so we can find a solution together.</p>
+
+        <p style="margin:0 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Legal Action:</strong> In the rare event that payments remain unsettled, we may need to
+          take legal steps to recover the amount due, including interest and any associated costs. We prefer to resolve
+          matters amicably and hope this will never be necessary.</p>
+
+        <!-- Labor Costs -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Labor Costs</h3>
+
+        <ul style="margin:0 0 0px 0px; padding:0; list-style-position: inside;">
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Inclusions:</strong> Labor costs are included in our quotation unless pre-existing
+            wiring or systems are found that require additional work. We will assess the site during the visit and
+            inform you of any potential extra costs.</li>
+          <li style="font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;"><strong>Additional Costs:</strong> If additional costs arise, we will notify you right away and
+            proceed only with your written consent. We believe in full transparency, so there will be no surprises.</li>
+        </ul>
+
+        <!-- Payment Obligation -->
+
+        <h3 style="margin:0px 0 0px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;">Payment Obligation</h3>
+
+        <p style="margin:0 0 15px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Your satisfaction is our priority, and we will manage the entire process diligently from start
+          to finish.</p>
+
+        <p style="margin:0 0 15px 0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">Any additional materials required to install the solar facility shall be subject to another
+          order form. Should Solviva not be able to proceed with the completion of the installation, and the consequent
+          turnover of the Solar Facility due to an action or decision of the client such as, but not limited to, the
+          unavailability of the structure on which the Solar Facility will be installed, then Solviva shall turn over
+          any and all installed portions of the facility, and the client shall be liable for the payments commensurate
+          to the portions that have been turned over. Any additional materials required to install the solar facility
+          shall be subject to another order form.</p>
+
+        <p style="margin:0; font-size: 7pt; font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;">We appreciate your understanding that the net metering status does not impact the payment terms
+          outlined in this proposal. Thank you for choosing Solviva. We look forward to helping you make the switch to
+          clean, renewable energy.</p>
+      </div>
+    </div>
+  </div>
+</div>
